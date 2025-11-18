@@ -96,16 +96,13 @@
 
             <ul class="nav nav-tabs align-items-center">
               <li class="nav-item">
-                <a class="nav-link active disabled" href="#">Profile</a>
+                <a class="nav-link active disabled" href="#">Mi Perfil</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="#">Teams</a>
+                <a class="nav-link disabled" href="#">Mis bienes</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="#">Projects <span class="badge bg-soft-dark text-dark rounded-circle ms-1">3</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#">Connections</a>
+                <a class="nav-link disabled" href="#">Mis solicitudes <span class="badge bg-soft-dark text-dark rounded-circle ms-1">3</span></a>
               </li>
 
               <li class="nav-item ms-auto">
@@ -114,27 +111,16 @@
                     <i class="bi-person-plus-fill me-1"></i> Editar perfil
                   </a>
 
-                  <a class="btn btn-white btn-icon btn-sm" href="#">
-                    <i class="bi-list-ul me-1"></i>
-                  </a>
-
-                  <!-- Dropdown -->
                   <div class="dropdown nav-scroller-dropdown">
                     <button type="button" class="btn btn-white btn-icon btn-sm" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                       <i class="bi-three-dots-vertical"></i>
                     </button>
 
                     <div class="dropdown-menu dropdown-menu-end mt-1" aria-labelledby="profileDropdown">
-                      <span class="dropdown-header">Settings</span>
+                      <span class="dropdown-header">Configuración</span>
 
                       <a class="dropdown-item" href="#">
-                        <i class="bi-share-fill dropdown-item-icon"></i> Share profile
-                      </a>
-                      <a class="dropdown-item" href="#">
-                        <i class="bi-slash-circle dropdown-item-icon"></i> Block page and profile
-                      </a>
-                      <a class="dropdown-item" href="#">
-                        <i class="bi-info-circle dropdown-item-icon"></i> Suggest edits
+                        <i class="bi-share-fill dropdown-item-icon"></i> Compartir perfil
                       </a>
 
                       <div class="dropdown-divider"></div>
@@ -142,7 +128,7 @@
                       <span class="dropdown-header">Feedback</span>
 
                       <a class="dropdown-item" href="#">
-                        <i class="bi-flag dropdown-item-icon"></i> Report
+                        <i class="bi-flag dropdown-item-icon"></i> Reportar
                       </a>
                     </div>
                   </div>
@@ -182,9 +168,70 @@
                     <li><i class="bi-phone dropdown-item-icon"></i> {{ $user->phone }}</li>
                     @endif
 
-                    <li class="pt-4 pb-0"><span class="card-subtitle">Teams</span></li>
-                    <li class="fs-6 text-body"><i class="bi-people dropdown-item-icon"></i> You are not a member of any teams</li>
-                    <li class="fs-6 text-body"><i class="bi-stickies dropdown-item-icon"></i> You are not working on any projects</li>
+                    <li class="pt-4 pb-0"><span class="card-subtitle">Miembros del departamento</span></li>
+                    
+                    <!-- Miembro 1: Amanda Harvey -->
+                    <li class="pt-2">
+                      <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0" style="position: relative;">
+                          <div class="avatar avatar-sm avatar-circle" style="border: 2px solid #28a745;">
+                            <img class="avatar-img" src="{{ asset('img/160x160/img10.jpg') }}" alt="Amanda Harvey">
+                          </div>
+                          <span class="avatar-status avatar-sm-status avatar-status-success"></span>
+                        </div>
+                        <div class="flex-grow-1 ms-2">
+                          <span class="text-dark">Amanda Harvey</span>
+                        </div>
+                        <div class="flex-shrink-0">
+                          <div class="dropdown">
+                            <button type="button" class="btn btn-ghost-secondary btn-icon btn-sm rounded-circle" 
+                                    id="memberDropdown1" data-bs-toggle="dropdown" aria-expanded="false">
+                              <i class="bi-three-dots-vertical"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end mt-1" aria-labelledby="memberDropdown1">
+                              <a class="dropdown-item" href="#">
+                                <i class="bi-chat-left-dots dropdown-item-icon"></i> Chatear
+                              </a>
+                              <a class="dropdown-item" href="#">
+                                <i class="bi-person dropdown-item-icon"></i> Ver perfil
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    
+                    <!-- Miembro 2: David Harrison -->
+                    <li class="pt-2">
+                      <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0" style="position: relative;">
+                          <div class="avatar avatar-sm avatar-circle" style="border: 2px solid #e7eaf3;">
+                            <img class="avatar-img" src="{{ asset('img/160x160/img3.jpg') }}" alt="David Harrison">
+                          </div>
+                          <span class="avatar-status avatar-sm-status avatar-status-secondary"></span>
+                        </div>
+                        <div class="flex-grow-1 ms-2">
+                          <span class="text-dark">David Harrison</span>
+                        </div>
+                        <div class="flex-shrink-0">
+                          <div class="dropdown">
+                            <button type="button" class="btn btn-ghost-secondary btn-icon btn-sm rounded-circle" 
+                                    id="memberDropdown2" data-bs-toggle="dropdown" aria-expanded="false">
+                              <i class="bi-three-dots-vertical"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end mt-1" aria-labelledby="memberDropdown2">
+                              <a class="dropdown-item" href="#">
+                                <i class="bi-chat-left-dots dropdown-item-icon"></i> Chatear
+                              </a>
+                              <a class="dropdown-item" href="#">
+                                <i class="bi-person dropdown-item-icon"></i> Ver perfil
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+
                   </ul>
                 </div>
               </div>
@@ -196,11 +243,11 @@
                   </div>
 
                   <div class="mb-3">
-                    <h3>2-step verification</h3>
-                    <p>Protect your account now and enable 2-step verification in the settings.</p>
+                    <h3>No comparta su contraseña</h3>
+                    <p>Su contraseña es privada. Si alguien se la solicita, repórtelo de inmediato.</p>
                   </div>
 
-                  <a class="btn btn-primary" href="./account-settings.html#twoStepVerificationSection">Enable now</a>
+                  <a class="btn btn-primary" href="#">Reportar</a>
                 </div>
               </div>
             </div>
@@ -208,7 +255,7 @@
             <div class="col-lg-8">
               <div class="card card-centered mb-3 mb-lg-5">
                 <div class="card-header card-header-content-between">
-                  <h4 class="card-header-title">Activity stream</h4>
+                  <h4 class="card-header-title">Actividades Recientes</h4>
 
                   <div class="dropdown">
                     <button type="button" class="btn btn-ghost-secondary btn-icon btn-sm rounded-circle" id="contentActivityStreamDropdown" data-bs-toggle="dropdown" aria-expanded="false">
@@ -216,21 +263,10 @@
                     </button>
 
                     <div class="dropdown-menu dropdown-menu-end mt-1" aria-labelledby="contentActivityStreamDropdown">
-                      <span class="dropdown-header">Settings</span>
+                      <span class="dropdown-header">Configuración</span>
 
                       <a class="dropdown-item" href="#">
-                        <i class="bi-share-fill dropdown-item-icon"></i> Share connections
-                      </a>
-                      <a class="dropdown-item" href="#">
-                        <i class="bi-info-circle dropdown-item-icon"></i> Suggest edits
-                      </a>
-
-                      <div class="dropdown-divider"></div>
-
-                      <span class="dropdown-header">Feedback</span>
-
-                      <a class="dropdown-item" href="#">
-                        <i class="bi-chat-left-dots dropdown-item-icon"></i> Report
+                        <i class="bi-activity dropdown-item-icon"></i> Ver Actividades
                       </a>
                     </div>
                   </div>
@@ -238,13 +274,13 @@
                 <div class="card-body card-body-height">
                   <img class="avatar avatar-xxl mb-3" src="{{ asset('svg/illustrations/oc-error.svg') }}" alt="Image Description" data-hs-theme-appearance="default">
                   <img class="avatar avatar-xxl mb-3" src="{{ asset('svg/illustrations-light/oc-error.svg') }}" alt="Image Description" data-hs-theme-appearance="dark">
-                  <p class="card-text">No data to show</p>
-                  <a class="btn btn-white btn-sm" href="./#">Start your Activity</a>
+                  <p class="card-text">No hay actividades para mostrar</p>
+                  <a class="btn btn-white btn-sm" href="./#">Iniciar Actividades</a>
                 </div>
               </div>
               <div class="card card-centered mb-3 mb-lg-5">
                 <div class="card-header card-header-content-between">
-                  <h4 class="card-header-title">Projects</h4>
+                  <h4 class="card-header-title">Proyectos</h4>
 
                   <div class="dropdown">
                     <button type="button" class="btn btn-ghost-secondary btn-icon btn-sm rounded-circle" id="projectReportDropdown" data-bs-toggle="dropdown" aria-expanded="false">
@@ -252,21 +288,10 @@
                     </button>
 
                     <div class="dropdown-menu dropdown-menu-end mt-1" aria-labelledby="projectReportDropdown">
-                      <span class="dropdown-header">Settings</span>
+                      <span class="dropdown-header">Configuración</span>
 
                       <a class="dropdown-item" href="#">
-                        <i class="bi-share-fill dropdown-item-icon"></i> Share connections
-                      </a>
-                      <a class="dropdown-item" href="#">
-                        <i class="bi-info-circle dropdown-item-icon"></i> Suggest edits
-                      </a>
-
-                      <div class="dropdown-divider"></div>
-
-                      <span class="dropdown-header">Feedback</span>
-
-                      <a class="dropdown-item" href="#">
-                        <i class="bi-chat-left-dots dropdown-item-icon"></i> Report
+                        <i class="bi-folder dropdown-item-icon"></i> Ver Proyectos
                       </a>
                     </div>
                   </div>
@@ -274,8 +299,8 @@
                 <div class="card-body card-body-height card-body-centered">
                   <img class="avatar avatar-xxl mb-3" src="{{ asset('svg/illustrations/oc-error.svg') }}" alt="Image Description" data-hs-theme-appearance="default">
                   <img class="avatar avatar-xxl mb-3" src="{{ asset('svg/illustrations-light/oc-error.svg') }}" alt="Image Description" data-hs-theme-appearance="dark">
-                  <p class="card-text">No data to show</p>
-                  <a class="btn btn-white btn-sm" href="./projects.html">Start your Projects</a>
+                  <p class="card-text">No hay proyectos para mostrar</p>
+                  <a class="btn btn-white btn-sm" href="./projects.html">Iniciar Proyectos</a>
                 </div>
               </div>
             </div>
