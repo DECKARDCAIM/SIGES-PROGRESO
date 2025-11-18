@@ -1,0 +1,7 @@
+* {
+    transition: unset !important;
+}
+
+body {
+    opacity: 0;
+}
