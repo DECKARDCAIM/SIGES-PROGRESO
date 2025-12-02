@@ -17,6 +17,18 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->enum('estado', ['disponible', 'ocupado', 'ausente', 'privado'])->default('disponible');
+            $table->string('avatar')->nullable();
+            $table->string('avatar_url')->nullable();
+            $table->string('banner')->nullable();
+            $table->string('banner_url')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('department')->nullable();
+            $table->string('company')->nullable();
+            $table->string('location')->nullable();
+            $table->text('about')->nullable();
+            $table->string('theme_preference')->nullable()->default('auto');
+            $table->json('inventory_column_prefs')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

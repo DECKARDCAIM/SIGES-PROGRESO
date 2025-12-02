@@ -32,6 +32,7 @@ class User extends Authenticatable
         'location',
         'about',
         'theme_preference',
+        'inventory_column_prefs',
     ];
 
     /**
@@ -54,6 +55,7 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'inventory_column_prefs' => 'array',
         ];
     }
 

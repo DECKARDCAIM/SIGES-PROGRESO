@@ -1,10 +1,6 @@
  <aside
      class="js-navbar-vertical-aside navbar navbar-vertical-aside navbar-vertical navbar-vertical-fixed navbar-expand-xl navbar-bordered bg-white  ">
-     <style>
-         .navbar-vertical-aside .nav-link.dropdown-toggle::after {
-             display: none !important;
-         }
-     </style>
+
 
      <div class="navbar-vertical-container">
          <div class="navbar-vertical-footer-offset">
@@ -55,22 +51,35 @@
 
 
 
-                     <!-- Módulo: Inventario -->
-                     <div class="nav-item">
-                         <a class="nav-link dropdown-toggle" href="#navbarVerticalMenuInventario" role="button"
-                             data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuInventario"
-                             aria-expanded="false" aria-controls="navbarVerticalMenuInventario">
-                             <i class="bi-box-seam nav-icon"></i>
-                             <span class="nav-link-title">Inventario</span>
-                         </a>
+                    <!-- Módulo: Inventario -->
+                    <div class="nav-item">
+                        <a class="nav-link dropdown-toggle" href="#navbarVerticalMenuInventario" role="button"
+                            data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuInventario"
+                            aria-expanded="false" aria-controls="navbarVerticalMenuInventario">
+                            <i class="bi-box-seam nav-icon"></i>
+                            <span class="nav-link-title">Inventario</span>
+                        </a>
 
-                         <div id="navbarVerticalMenuInventario" class="nav-collapse collapse"
-                             data-bs-parent="#navbarVerticalMenu">
-                             <a class="nav-link" href="/inventario/nuevo-registro">Nuevo registro</a>
-                             <a class="nav-link" href="/inventario/traspasos">Traspasos</a>
-                             <a class="nav-link" href="/inventario/dictamenes">Dictámenes</a>
-                         </div>
-                     </div>
+                        <div id="navbarVerticalMenuInventario" class="nav-collapse collapse"
+                            data-bs-parent="#navbarVerticalMenu">
+                            <a class="nav-link {{ request()->routeIs('inventory.index') ? 'active' : '' }}" 
+                               href="{{ route('inventory.index') }}">
+                                <i class="bi-list-ul me-2"></i>Gestión de Bienes
+                            </a>
+                            <a class="nav-link {{ request()->routeIs('inventory.create') ? 'active' : '' }}" 
+                               href="{{ route('inventory.create') }}">
+                                <i class="bi-plus-circle me-2"></i>Nuevo Registro
+                            </a>
+                            <a class="nav-link {{ request()->routeIs('inventory.transfers.*') ? 'active' : '' }}" 
+                               href="{{ route('inventory.transfers.index') }}">
+                                <i class="bi-arrow-left-right me-2"></i>Traspasos
+                            </a>
+                            <a class="nav-link {{ request()->routeIs('inventory.appraisals.*') ? 'active' : '' }}" 
+                               href="{{ route('inventory.appraisals.pending') }}">
+                                <i class="bi-clipboard-check me-2"></i>Dictámenes
+                            </a>
+                        </div>
+                    </div>
 
 
 
